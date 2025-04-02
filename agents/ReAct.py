@@ -67,6 +67,7 @@ class ReActAgent:
             {"messages": [HumanMessage(content=input)]},
             stream_mode="values"
         )
+        first_message = True
         for s in stream:
             message = s["messages"][-1]
             if isinstance(message, tuple):
